@@ -117,4 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="textBox2.Text" xml:space="preserve">
+    <value>select p.nomk_ls as CODE, t.name_med as name, t.name_fct as proizv, p.price as price, p.expdate as srok, p.ko_ost  as qty, gk.ngk as numberGK, gk.abr as program, org.orgname from product.dbf p inner join lots.dbf l on l.lot = p.lot inner join goscontract.dbf gk on gk.idgk = l.idgk inner join sp_tov.dbf t on t.nomk_ls = p.nomk_ls left join invoice.dbf i on i.idinvoice = p.idinvoice left join sp_org.dbf org on org.idorg = i.org_from 
+where  p.ko_ost &gt; 0</value>
+  </data>
 </root>

@@ -1,16 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace ExportKizsFromMedicom
 {
     public static class DBSetToCsv
     {
-        internal static void ExportDataSetToCsvFile(DataSet _DataSet, string DestinationCsvDirectory, out int progress, out int allRows, out string fileName)
+        internal static void ExportDataSetToCsvFile(DataSet _DataSet, string DestinationCsvDirectory, string name, out int progress, out int allRows, out string fileName)
         { 
             progress = 0;
             allRows = _DataSet.Tables[0].Rows.Count;
@@ -19,11 +16,11 @@ namespace ExportKizsFromMedicom
             {
                 foreach (DataTable DDT in _DataSet.Tables)
                 {
-                    String MyFile = @DestinationCsvDirectory + "\\KizRemains"  + DateTime.Now.ToString("yyyyMMddhhMMssffff") + ".csv";//+ DateTime.Now.ToString("ddMMyyyyhhMMssffff")
+                    string MyFile = @DestinationCsvDirectory + $"\\{name}"  + DateTime.Now.ToString("yyyyMMddhhMMssffff") + ".csv";//+ DateTime.Now.ToString("ddMMyyyyhhMMssffff")
                     fileName = MyFile;
                     using (var outputFile = File.CreateText(MyFile))
                     {
-                        String CsvText = string.Empty;
+                        string CsvText = string.Empty;
 
                         foreach (DataColumn DC in DDT.Columns)
                         {
