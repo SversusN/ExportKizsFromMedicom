@@ -12,7 +12,7 @@ namespace ExportKizsFromMedicom
             InitializeComponent();
             connectionString = textBox1.Text;
             queryRemains = textBox2.Text;
-            queryKizs = textBox3.Text;
+    
             
         }
         private string connectionString;
@@ -31,7 +31,7 @@ namespace ExportKizsFromMedicom
                 MessageBox.Show("Так нельзя! Скрипты заполнить надо.");
             }
             ExportCsv(connString, "remains" ,textBox2.Text);
-            ExportCsv(connString, "kizs", textBox3.Text);
+          //  ExportCsv(connString, "kizs", textBox3.Text);
 
         }
 
@@ -47,6 +47,7 @@ namespace ExportKizsFromMedicom
             {
                 da.Fill(ds);
             } catch (Exception ex) { MessageBox.Show(ex.ToString(),"Проверь запрос!");return; }
+
             string destinationFile = Environment.CurrentDirectory;
             string fileName = string.Empty;
             DBSetToCsv.ExportDataSetToCsvFile(ds, destinationFile,name , out int progress, out int allRows, out fileName);
@@ -66,11 +67,7 @@ namespace ExportKizsFromMedicom
             queryRemains = textBox2.Text;
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-            queryKizs = textBox3.Text;
-        }
-
+     
     }
 }
 

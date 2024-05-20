@@ -34,14 +34,12 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(28, 386);
+            this.button1.Location = new System.Drawing.Point(34, 324);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(654, 57);
             this.button1.TabIndex = 0;
@@ -79,19 +77,9 @@
             this.textBox2.Location = new System.Drawing.Point(95, 147);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(587, 105);
+            this.textBox2.Size = new System.Drawing.Size(587, 157);
             this.textBox2.TabIndex = 4;
             this.textBox2.Text = resources.GetString("textBox2.Text");
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(95, 276);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(587, 93);
-            this.textBox3.TabIndex = 5;
-            this.textBox3.Text = "select pm.cim,p.nomk_ls, p.series, p.price from productmark.dbf pm inner join pro" +
-    "duct.dbf p on p.idproduct = pm.idproduct where pm.ko_src > 0";
             // 
             // label2
             // 
@@ -102,23 +90,12 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Остатки";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(28, 304);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 16);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "КИЗы";
-            // 
             // ExportKizs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 465);
-            this.Controls.Add(this.label3);
+            this.ClientSize = new System.Drawing.Size(700, 408);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
@@ -138,9 +115,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
     }
 }
 
